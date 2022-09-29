@@ -20,83 +20,83 @@ import Palpatine from "./img/palpatine.png";
 import Finn from "./img/finn.png";
 import BBO from "./img/BBO.jpeg";
 
-
-
-
 function App() {
-  const [cards,setCard] = useState([
-  {id:0,name:'Yoda',pic:yoda},
-  {id:1,name:'Vader',pic:vader},
-  {id:2,name:'Trooper',pic:trooper},
-  {id:3,name:'Solo',pic:solo},
-  {id:4,name:'R2',pic:R2},
-  {id:5,name:'ObiWan',pic:obiWan},
-  {id:6,name:'Luke',pic:luke},
-  {id:7,name:'Leia',pic:leia},
-  {id:8,name:'Kylo',pic:kylo},
-  {id:9,name:'Chube',pic:chube},
-  {id:10,name:'C3-PO',pic:C3PO},
-  {id:11,name:'BobaFet',pic:BobaFet},
-  {id:12,name:'Poe',pic:Poe},
-  {id:13,name:'Palpatine',pic:Palpatine},
-  {id:14,name:'Finn',pic:Finn},
-  {id:15,name:'BBO',pic:BBO}],
-)
-const [score,setScore] = useState(0)
-const [bestScore,setBestScore] = useState(0)
+     const [cards, setCard] = useState([
+          { id: 0, name: "Yoda", pic: yoda, wasClicked: false },
+          { id: 1, name: "Vader", pic: vader, wasClicked: false },
+          { id: 2, name: "Trooper", pic: trooper, wasClicked: false },
+          { id: 3, name: "Solo", pic: solo, wasClicked: false },
+          { id: 4, name: "R2", pic: R2, wasClicked: false },
+          { id: 5, name: "ObiWan", pic: obiWan, wasClicked: false },
+          { id: 6, name: "Luke", pic: luke, wasClicked: false },
+          { id: 7, name: "Leia", pic: leia, wasClicked: false },
+          { id: 8, name: "Kylo", pic: kylo, wasClicked: false },
+          { id: 9, name: "Chube", pic: chube, wasClicked: false },
+          { id: 10, name: "C3-PO", pic: C3PO, wasClicked: false },
+          { id: 11, name: "BobaFet", pic: BobaFet, wasClicked: false },
+          { id: 12, name: "Poe", pic: Poe, wasClicked: false },
+          { id: 13, name: "Palpatine", pic: Palpatine, wasClicked: false },
+          { id: 14, name: "Finn", pic: Finn, wasClicked: false },
+          { id: 15, name: "BBO", pic: BBO, wasClicked: false },
+     ]);
+     const [score, setScore] = useState(0);
+     const [bestScore, setBestScore] = useState(0);
+     const [newCards, setnewCards] = useState([...cards]);
 
- const handleClick = (e) =>{
-  setScore(score+10)
-  setBestScore(score)
-  let move = e.target.id
-  let newMove = e.target.id;
-  // console.log( move)  
-}
+     const handleClick = (e) => {
+          let i = e.target.id;
+          if (newCards[i].wasClicked === false) {
+               newCards[i].wasClicked = true;
+               setScore(score + 10);
+          } else {
+               setScore(0);
+               newCards.map((item) => (item.wasClicked = false));
+               console.log(newCards);
+          }
+     };
 
-function shuffle(array) {
-  let shuffledArray = [];
-  let usedIndexes = [];
- 
-  let i = 0;
-  while (i < array.length) {
-    let randomNumber = Math.floor(Math.random() * array.length);
-      if (!usedIndexes.includes(randomNumber)) {
-        shuffledArray.push(array[randomNumber]);
-        usedIndexes.push(randomNumber);
-        i++;
-        }
-    }
-    return shuffledArray;
-}
+     function shuffle(array) {
+          let shuffledArray = [];
+          let usedIndexes = [];
 
-useEffect(()=>{
-  
-    console.log(shuffle(cards))
-},[handleClick])
+          let i = 0;
+          while (i < array.length) {
+               let randomNumber = Math.floor(Math.random() * array.length);
+               if (!usedIndexes.includes(randomNumber)) {
+                    shuffledArray.push(array[randomNumber]);
+                    usedIndexes.push(randomNumber);
+                    i++;
+               }
+          }
+          return shuffledArray;
+     }
 
+     useEffect(() => {
+          setCard(shuffle(cards));
+          setBestScore(score);
+     }, [score]);
 
+     // const isMatch = (e)=>{
 
-// const isMatch = (e)=>{
-
-// }
+     // }
      return (
           <>
-               <Nav 
-               score={score}
-               bestScore={bestScore}/>
+               <Nav score={score} bestScore={bestScore} />
 
-                 <div className="container" style={{backgroundColor:'black'}}>
-                <div className="row">
-                  {shuffle( cards.map(card =>(
-                    <Card
-                    id={card.id}
-                    key={card.id}
-                    img={card.pic}
-                    name={card.name}
-                    Click={handleClick} />
-                  )))}
-                </div>    
-                </div>
+               <div className="container" style={{ backgroundColor: "black" }}>
+                    <div className="row">
+                         {cards.map((card) => (
+                              <Card
+                                   wasclicked={card.wasClicked}
+                                   id={card.id}
+                                   key={card.id}
+                                   img={card.pic}
+                                   name={card.name}
+                                   click={handleClick}
+                              />
+                         ))}
+                    </div>
+               </div>
           </>
      );
 }
