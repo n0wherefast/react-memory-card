@@ -23,35 +23,36 @@ import BBO from "./img/BBO.jpeg";
 function App() {
      const [cards, setCard] = useState([
           { id: 0, name: "Yoda", pic: yoda, wasClicked: false },
-          { id: 1, name: "Vader", pic: vader, wasClicked: false },
+          { id: 1, name: "Darth Vader", pic: vader, wasClicked: false },
           { id: 2, name: "Trooper", pic: trooper, wasClicked: false },
-          { id: 3, name: "Solo", pic: solo, wasClicked: false },
-          { id: 4, name: "R2", pic: R2, wasClicked: false },
-          { id: 5, name: "ObiWan", pic: obiWan, wasClicked: false },
+          { id: 3, name: "ian Solo", pic: solo, wasClicked: false },
+          { id: 4, name: "R2-d2", pic: R2, wasClicked: false },
+          { id: 5, name: "obi-Wan", pic: obiWan, wasClicked: false },
           { id: 6, name: "Luke", pic: luke, wasClicked: false },
           { id: 7, name: "Leia", pic: leia, wasClicked: false },
-          { id: 8, name: "Kylo", pic: kylo, wasClicked: false },
-          { id: 9, name: "Chube", pic: chube, wasClicked: false },
-          { id: 10, name: "C3-PO", pic: C3PO, wasClicked: false },
-          { id: 11, name: "BobaFet", pic: BobaFet, wasClicked: false },
+          { id: 8, name: "Kylo ren", pic: kylo, wasClicked: false },
+          { id: 9, name: "Chewbecca", pic: chube, wasClicked: false },
+          { id: 10, name: "C3-Po", pic: C3PO, wasClicked: false },
+          { id: 11, name: "Boba Fett", pic: BobaFet, wasClicked: false },
           { id: 12, name: "Poe", pic: Poe, wasClicked: false },
           { id: 13, name: "Palpatine", pic: Palpatine, wasClicked: false },
           { id: 14, name: "Finn", pic: Finn, wasClicked: false },
-          { id: 15, name: "BBO", pic: BBO, wasClicked: false },
+          { id: 15, name: "BBo", pic: BBO, wasClicked: false },
      ]);
      const [score, setScore] = useState(0);
      const [bestScore, setBestScore] = useState(0);
-     const [newCards, setnewCards] = useState([...cards]);
+     const [newCards] = useState([...cards]);
+     const[win,setWin] = useState('none')
 
      const handleClick = (e) => {
           let i = e.target.id;
-          if (newCards[i].wasClicked === false) {
+          if (newCards[i].wasClicked === false) {{/* if card matches */}
                newCards[i].wasClicked = true;
                setScore(score + 10);
           } else {
                setScore(0);
-               newCards.map((item) => (item.wasClicked = false));
-               console.log(newCards);
+               newCards.map((item) => (item.wasClicked = false)); {/* reset game when there is a match */}
+               
           }
      };
 
@@ -73,21 +74,30 @@ function App() {
 
      useEffect(() => {
           setCard(shuffle(cards));
-          setBestScore(score);
+          if(score > bestScore){
+           setBestScore(score);     
+          }
+          if(score===150){
+            console.log('win')
+             setWin('flex') 
+          }else if(score===0)
+          {setWin('none')}
+            
+                   
      }, [score]);
 
-     // const isMatch = (e)=>{
+     
 
-     // }
      return (
           <>
-               <Nav score={score} bestScore={bestScore} />
+               <Nav score={score} win={win} bestScore={bestScore} />
 
                <div className="container" style={{ backgroundColor: "black" }}>
-                    <div className="row">
+                    <div className="row" style={{ justifyContent:'center'}}>
+                    <h4 className="bg-dark" style={{fontFamily:'' ,color:'yellow',margin:'1rem',padding:'0.5rem',borderRadius:'10px'}}>Get points by clicking on an image but don't click on any more than once!</h4>
                          {cards.map((card) => (
                               <Card
-                                   wasclicked={card.wasClicked}
+                                  
                                    id={card.id}
                                    key={card.id}
                                    img={card.pic}

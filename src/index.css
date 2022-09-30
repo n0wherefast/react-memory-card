@@ -1,20 +1,15 @@
+@font-face {
+  font-family: starjedi;
+  src: url(/src/Starjedi.ttf);
+}
 body {
+  font-family:'starjedi'!important;
   margin: 0;
  
   background-color: black !important;
+  overflow: hidden !important;
 }
 
 
 
-/* @media (max-width: 48em) {
-  .container{
-    display: block !important;
-  }
-}
-.card-title{
-  font-size: 56px ;
-  font-weight: 900;
-}
-.card-body > h1 , h2{
-  border-bottom: 1px black solid;
-} */
+
