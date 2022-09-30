@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/react-memory-card/static/css/main.f642f308.css",
+    "main.js": "/react-memory-card/static/js/main.2d4bb18d.js",
+    "static/media/BobaFet.png": "/react-memory-card/static/media/BobaFet.18affaf2600dd8302dd5.png",
+    "static/media/yoda.png": "/react-memory-card/static/media/yoda.5159367f50e5ea44f704.png",
+    "static/media/luke.png": "/react-memory-card/static/media/luke.df7b12374d4654036b37.png",
+    "static/media/palpatine.png": "/react-memory-card/static/media/palpatine.b779ab2738e26f4823e1.png",
+    "static/media/obiWan.png": "/react-memory-card/static/media/obiWan.c21399547c82dd9b4ee3.png",
+    "static/media/Poe.png": "/react-memory-card/static/media/Poe.f8b73eb31a86a84cd997.png",
+    "static/media/trooper.png": "/react-memory-card/static/media/trooper.3a115bbbcd369ae057bb.png",
+    "static/media/chube.png": "/react-memory-card/static/media/chube.b38ed4c3756a737c4a16.png",
+    "static/media/vader.png": "/react-memory-card/static/media/vader.08bb8dd015e5a2af3a97.png",
+    "static/media/finn.png": "/react-memory-card/static/media/finn.48b1eb267c9da7c3dbe0.png",
+    "static/media/solo.png": "/react-memory-card/static/media/solo.e018335ae3eee7997d96.png",
+    "static/media/Starjedi.ttf": "/react-memory-card/static/media/Starjedi.8d577dc1e1755c4860f3.ttf",
+    "static/media/R2.jpeg": "/react-memory-card/static/media/R2.9459a0af56e40906d723.jpeg",
+    "static/media/kylo.jpeg": "/react-memory-card/static/media/kylo.ff89854a4baeef4e2b03.jpeg",
+    "static/media/BBO.jpeg": "/react-memory-card/static/media/BBO.4a7e657d7cd82db62ef2.jpeg",
+    "static/media/leia.jpeg": "/react-memory-card/static/media/leia.a7326c448684997695bf.jpeg",
+    "index.html": "/react-memory-card/index.html",
+    "main.f642f308.css.map": "/react-memory-card/static/css/main.f642f308.css.map",
+    "main.2d4bb18d.js.map": "/react-memory-card/static/js/main.2d4bb18d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f642f308.css",
+    "static/js/main.2d4bb18d.js"
+  ]
+}
