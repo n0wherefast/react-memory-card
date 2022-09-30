@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-memory-card/static/css/main.f642f308.css",
-    "main.js": "/react-memory-card/static/js/main.2d4bb18d.js",
+    "main.css": "/react-memory-card/static/css/main.badc18bb.css",
+    "main.js": "/react-memory-card/static/js/main.23a4443a.js",
     "static/media/BobaFet.png": "/react-memory-card/static/media/BobaFet.18affaf2600dd8302dd5.png",
     "static/media/yoda.png": "/react-memory-card/static/media/yoda.5159367f50e5ea44f704.png",
     "static/media/luke.png": "/react-memory-card/static/media/luke.df7b12374d4654036b37.png",
@@ -19,11 +19,11 @@
     "static/media/BBO.jpeg": "/react-memory-card/static/media/BBO.4a7e657d7cd82db62ef2.jpeg",
     "static/media/leia.jpeg": "/react-memory-card/static/media/leia.a7326c448684997695bf.jpeg",
     "index.html": "/react-memory-card/index.html",
-    "main.f642f308.css.map": "/react-memory-card/static/css/main.f642f308.css.map",
-    "main.2d4bb18d.js.map": "/react-memory-card/static/js/main.2d4bb18d.js.map"
+    "main.badc18bb.css.map": "/react-memory-card/static/css/main.badc18bb.css.map",
+    "main.23a4443a.js.map": "/react-memory-card/static/js/main.23a4443a.js.map"
   },
   "entrypoints": [
-    "static/css/main.f642f308.css",
-    "static/js/main.2d4bb18d.js"
+    "static/css/main.badc18bb.css",
+    "static/js/main.23a4443a.js"
   ]
 }
