@@ -9,7 +9,15 @@ body {
   background-color: black !important;
   overflow: hidden !important;
 }
-
+@media screen and (max-width:1400px) {
+  body{
+    overflow-y:auto !important;
+  }
+  .card{
+    width: 20rem !important;
+    
+  }
+}
 
 
 
