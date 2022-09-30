@@ -23,7 +23,7 @@ import BBO from "./img/BBO.jpeg";
 function App() {
      const [cards, setCard] = useState([
           { id: 0, name: "Yoda", pic: yoda, wasClicked: false },
-          { id: 1, name: "Darth Vader", pic: vader, wasClicked: false },
+          { id: 1, name: "Darth vader", pic: vader, wasClicked: false },
           { id: 2, name: "Trooper", pic: trooper, wasClicked: false },
           { id: 3, name: "ian Solo", pic: solo, wasClicked: false },
           { id: 4, name: "R2-d2", pic: R2, wasClicked: false },
