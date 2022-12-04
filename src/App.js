@@ -94,7 +94,7 @@ function App() {
 
                <div className="container" style={{ backgroundColor: "black" }}>
                     <div className="row" style={{ justifyContent:'center'}}>
-                    <h4 className="bg-dark" style={{fontFamily:'' ,color:'yellow',margin:'1rem',padding:'0.5rem',borderRadius:'10px'}}>Get points by clicking on an image but don't click on any more than once!</h4>
+                    <h4 className="bg-dark" style={{fontFamily:'' ,color:'red',margin:'1rem',padding:'0.5rem',borderRadius:'10px'}}>Get points by clicking on an image but don't click on any more than once!</h4>
                          {cards.map((card) => (
                               <Card
                                   
